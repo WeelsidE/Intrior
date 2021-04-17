@@ -72,6 +72,30 @@ a {
     color: #fff;
 }
 
+.btn_project {
+    border: 1px solid #fff;
+    border-radius: 50px;
+
+    padding: 8px 15px;
+
+    color: #fff;
+    font-size: 17px;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+    transition: background .2s linear,
+                color .2s linear,
+                border .2s linear;
+
+}
+
+.btn_project:hover {
+    background: #D8AD47;
+
+    border: 1px solid #D8AD47;
+
+    color: #000;
+}
+
 
 
 
@@ -235,26 +259,231 @@ a {
 
 /* ==========PROJECT========== */
 .project {
-    background: #020710;
-    padding: 35px 0;
+    background: url(../../img/bgProj.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+
+    padding: 200px 0 100px;
 }
+
+.project::before {
+    content: "";
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;top: 0;
+    z-index: 0;
+}
+
+.project::after {
+    content: "";
+
+    background-color: rgba(0, 0, 0, 0.9);
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;top: 0;
+    z-index: 1;
+}
+
+.project__inner {}
 
 .project__info {
     display: flex;
+    align-items: center;
+
+    margin-bottom: 45px;
 }
 
-.project__text {
+.project__content {
     max-width: 520px;
 
     margin-right: 50px;
+
+    z-index: 2;
 }
 
-.project__text p:last-child {
+.project__text {
     margin-bottom: 40px;
 }
 
 .project__item {
-    border: 2px solid #fff;
-    max-width: 700px;
-    height: 200px;
+    border-radius: 40px;
+
+    background: url(../../img/boston.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    width: 100%;
+    min-height: 365px;
+    padding: 20px 35px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.project__item::before {
+    content: "";
+
+    background-color: rgba(0, 0, 0, .35);
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;left: 0;
+    z-index: 1;
+}
+
+.project__item_text {
+    display: block;
+    position: relative;
+    z-index: 5;
+}
+
+.project__item_content {
+    margin-bottom: 40px;
+}
+
+.project__item_content h1 {
+    font-size: 62px;
+    font-weight: 900;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+    opacity: .8;
+}
+
+.project__item_content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #D8AD47;
+}
+
+.project__item_content h2 > sup {
+    font-size: 14px;
+}
+
+.project__item_content p {
+    font-size: 17px;
+
+    display: flex;
+    align-items: center;
+}
+
+.project__item_content img {
+    margin-right: 10px;
+}
+
+
+
+
+
+.project__line {
+    display: flex;
+}
+
+.project__line_item {
+    z-index: 5;
+
+    padding: 15px 40px;
+    margin-right: 35px;
+
+    min-width: 410px;
+    min-height: 360px;
+    padding: 20px 35px;
+
+    border-radius: 40px;
+}
+
+.project__line_content {
+    position: relative;
+    z-index: 3;
+}
+
+.project__line_text {
+    position: relative;
+    z-index: 3;
+
+    margin-bottom: 40px;
+}
+
+.project__line_item h1 {
+    font-size: 52px;
+    font-weight: 900;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+    opacity: .8;
+}
+
+.project__line_item h2 {
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #D8AD47;
+}
+
+.project__line_item h2 > sup {
+    font-size: 14px;
+}
+
+.project__line_item p {
+    font-size: 17px;
+
+    display: flex;
+    align-items: center;
+}
+
+.project__line_item img {
+    margin-right: 10px;
+}
+
+.project__line_item._first {
+    background: url(../../img/maiami.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+    z-index: 2;
+}
+
+.project__line_item._second {
+    background: url(../../img/sietl.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+    z-index: 2;
+}
+
+.project__line_item._third {
+    background: url(../../img/orlando.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+    z-index: 2;
+}
+
+.project__line_item._first::before,
+.project__line_item._second::before,
+.project__line_item._third::before {
+    content: "";
+
+    background-color: rgba(0, 0, 0, .5);
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;left: 0;
+    z-index: 2;
 }
