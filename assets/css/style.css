@@ -6,6 +6,14 @@ body {
     font-family: 'Poiret One', cursive;
     font-size: 16px;
     color: #fff;
+
+    overflow-x: hidden;
+}
+
+body._catalog {
+    height: 100%;
+
+    background: #000;
 }
 
 *,
@@ -212,6 +220,36 @@ a {
     height: 100vh;
 }
 
+.div {
+    border: 1px solid #000;
+}
+
+.intro__bg {
+    background: url(../../img/intro-bg.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    height: 100%;
+
+    padding: 100px 0;
+
+    position: relative;
+    z-index: 2;
+}
+
+.intro__bg::before {
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, .8);
+
+    position: absolute;
+    top: 0;left: 0;
+    z-index: 2;
+}
+
 .intro__content {
     display: flex;
     justify-content: center;
@@ -227,6 +265,61 @@ a {
     font-size: 1.75rem;
     font-weight: 600;
 }
+
+
+.intro__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1 0 auto;
+
+    margin: 0 auto;
+}
+
+.intro__item {
+    min-width: 200px;
+    padding: 10px 30px;
+
+    border-radius: 10px;
+    border: 1px solid #D8AD47;
+
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.intro__item > .project__line_content {
+    padding-bottom: 10px;
+}
+
+.intro__item._first {
+    background: url(../../img/maiami.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 10px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.intro__item._first::before {
+    content: "";
+
+    background-color: rgba(0, 0, 0, .5);
+
+    border-radius: 10px;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;left: 0;
+    z-index: 2;
+}
+
+
+
 
 
 
@@ -432,7 +525,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
 
-    padding: 10px;
+    margin: 10px;
 }
 
 .project__line_item {
@@ -803,6 +896,10 @@ a {
         align-items: center;
         flex-direction: column;
     }
+
+    .modal__content {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 600px) {
@@ -895,15 +992,134 @@ a {
     align-items: center;
 
     min-height: 100%;
+
+    overflow-x: hidden;
 }
 
 .modal__body {
-    display: flex;
-    justify-content: center;
+    max-width: 880px;
 
-    padding: 55px;
+    position: relative;
+    z-index: 3;
+
+    padding: 20px 40px;
+    margin: 10px;
+
+    background: rgba(255, 255, 255, .2);
+    border-radius: 5px;
 }
 
+.modal__img {
+    position: relative;
+    z-index: 1;
+}
+
+.modal__img::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;left: 0;
+    z-index: 2;
+
+    background: rgba(0, 0, 0, .3);
+
+    border-radius: 40px;
+}
+
+.modal__body i {
+    position: absolute;
+    top: 5px;right: 5px;
+
+    cursor: pointer;
+
+    transition: color .2s linear;
+}
+
+.modal__body i:hover {
+    color: #D8AD47;
+}
+
+.modal__body h1 {
+    font-size: 45px;
+    font-weight: 900;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #D8AD47;
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.modal__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.modal__info p {
+    display: flex;
+    align-items: center;
+}
+
+.modal__info p > img {
+    margin-right: 10px;
+}
+
+.modal__metr h2{
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #D8AD47;
+}
+
+.modal__metr sup{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #D8AD47;
+}
+
+.modal__price {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.modal__btn {
+    text-align: center;
+}
+
+.btn_modal {
+    border: 5px solid #fff;
+    border-radius: 10px;
+
+    padding: 8px 15px;
+
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    text-align: center;
+
+    transition: background .2s linear,
+                color .2s linear,
+                border .2s linear;
+}
+
+.btn_modal:hover {
+    background: #D8AD47;
+
+    border: 5px solid #D8AD47;
+
+    color: #000;
+}
+
+
+
+/* 
 .modal_block_menu { 
     margin-right: 50px;
 }
@@ -1047,4 +1263,4 @@ a {
     border: 5px solid #D8AD47;
 
     color: #000;
-}
+} */

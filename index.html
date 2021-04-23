@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;900&family=Poiret+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/bc11df43a9.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/fav/favicon.ico">
     <title>Interior</title>
 </head>
 <body>
@@ -16,16 +17,16 @@
     <!-- HEADER -->
     <header class="header">
         <div class="header__body _header-container">
-            <a class="header__logo" href="#"><h1>Interior<span>.</span></h1></a>
+            <a class="header__logo" href="index.html"><h1>Interior<span>.</span></h1></a>
 
             <nav class="menu">
                 <div class="menu__icon">
                     <span> </span>
                 </div>
                 <ul class="menu__body">
-                    <li><a class="menu__link" href="">About us</a></li>
-                    <li><a class="menu__link" href="">Project</a></li>
-                    <li><a class="menu__link" href="">Contacts</a></li>
+                    <li><a data-goto=".section1" class="menu__link" href="#">About us</a></li>
+                    <li><a data-goto=".section2" class="menu__link" href="#">Project</a></li>
+                    <li><a data-goto=".section3" class="menu__link" href="#">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,12 +38,12 @@
             <h1>Would you like to live in<br>beautiful and quiet place?</h1>
             <p>You can choose house of your dream in our catalog.<br>We are building houses more than 15 years.</p>
 
-            <a class="btn" id="btn" href="">Choose a house</a>
+            <a class="btn" id="btn" href="Catalog.html">Choose a house</a>
         </div>
     </div>
 
     <!-- ABOUT -->
-    <div class="about">
+    <div class="about section1">
         <div class="about__container _container">
             <div class="about__inner">
                 <div class="about__text">
@@ -73,7 +74,7 @@
 
 
     <!-- PROJECT -->
-    <div class="project">
+    <div class="project section2">
         <div class="project__inner _container">
             <div class="project__info">
                 <div class="project__content">
@@ -162,7 +163,7 @@
         </div>
     </div>
 
-    <div class="contact">
+    <div class="contact section3">
         <div class="contact__content _container">
             <div class="contact__info">
                 <h3>Contacts</h3>
@@ -209,52 +210,42 @@
 
 
 
-
-    <div class="modal">
+    <div class="modal modal__link" id="modal">
         <div class="modal__inner">
             <div class="modal__body">
-                <div class="modal_block_menu">
-                    <div class="modal_block_item _active"></div>
-                    <div class="modal_block_item"></div>
-                    <div class="modal_block_item"></div>
-                    <div class="modal_block_item"></div>
+                <i class="fas fa-window-close" id="icon__close"></i>
+                <h1>Boston</h1>
+
+                <div class="modal__img">
+                    <img class="img" src="img/boston.png" alt="">
                 </div>
 
-                <div class="modal__block">
-
-                    <div class="icon">
-                        <i class="fas fa-window-close" id="icon_close"></i>
+                <div class="modal__content">
+                    <div class="modal__info">
+                        <p><img src="img/house-user-solid.svg" alt=""> Rooms: 7</p>
+                        <p><img src="img/bathtub.png" alt=""> Bathrooms: 3</p>
+                        <p><img src="img/bed.png" alt=""> bedrooms: 3</p>
                     </div>
 
-                    <div class="modal__img">
-                        <img class="img" src="img/boston.png" alt="">
+                    <div class="modal__metr">
+                        <h2>450m<sup>2</sup></h2>
                     </div>
 
-                    <div class="moodal__content">
-                        <h1>Boston</h1>
-
-                        <div class="modal__info">
-                            <div class="modal__info_home">
-                                <p><img src="img/house-user-solid.svg" alt=""> Rooms: 7</p>
-                                <p><img src="img/bathtub.png" alt=""> Bathrooms: 3</p>
-                                <p><img src="img/bed.png" alt=""> bedrooms: 3</p>
-                            </div>
-
-                            <div class="modal__info_m2">
-                                <h2>450m<sup>2</sup></h2>
-                            </div>
-                        </div>
-
+                    <div class="modal__price">
                         <p class="modal__text">Price: 75$/day</p>
 
                         <p class="modal__text">Price: 1500$/mouth</p>
-
-                        <a class="btn_modal" href="">Buy now</a>
                     </div>
+
+                </div>
+
+                <div class="modal__btn">
+                    <a class="btn_modal" href="">Buy now</a>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 
