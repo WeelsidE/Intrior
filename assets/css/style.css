@@ -16,6 +16,10 @@ body._catalog {
     background: #000;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 *,
 *::before,
 *::after {
@@ -120,10 +124,17 @@ a {
     z-index: 2000;
 
     width: 100%;
+
+    transition: transform .2s linear,
+                background .2s linear;
 }
 
 .header._dark {
+    background: rgba(0, 0, 0, 0.7);
+}
 
+.header._out {
+    transform: translatey(-100%);
 }
 
 .header__body {

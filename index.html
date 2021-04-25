@@ -15,7 +15,7 @@
 <div class="page">
 
     <!-- HEADER -->
-    <header class="header">
+    <header class="header lock-padding">
         <div class="header__body _header-container">
             <a class="header__logo" href="index.html"><h1>Interior<span>.</span></h1></a>
 
@@ -35,7 +35,7 @@
     <!-- INTRO -->
     <div class="intro">
         <div class="intro__content _container">
-            <h1>Would you like to live in<br>beautiful and quiet place?</h1>
+            <h1 id="web">Would you like to live in<br>beautiful and quiet place?</h1>
             <p>You can choose house of your dream in our catalog.<br>We are building houses more than 15 years.</p>
 
             <a class="btn" id="btn" href="Catalog.html">Choose a house</a>
@@ -103,7 +103,7 @@
                             <p><img src="img/bed.png" alt="">3 bedrooms</p>
                         </div>
 
-                        <a class="btn_project" href="">See more</a>
+                        <a class="btn_project modal__link" href="#modal">See more</a>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@
                             <p><img src="img/bed.png" alt="">2</p>
                         </div>
 
-                        <a class="btn_project" href="">See more</a>
+                        <a class="btn_project modal__link" href="#modal1">See more</a>
                     </div>
                 </div>
 
@@ -139,7 +139,7 @@
                             <p><img src="img/bed.png" alt="">1</p>
                         </div>
 
-                        <a class="btn_project" href="">See more</a>
+                        <a class="btn_project modal__link" href="#modal2">See more</a>
                     </div>
                 </div>
                 
@@ -156,7 +156,7 @@
                             <p><img src="img/bed.png" alt="">3</p>
                         </div>
 
-                        <a class="btn_project" href="">See more</a>
+                        <a class="btn_project modal__link" href="#modal3">See more</a>
                     </div>
                 </div>
             </div>
@@ -246,10 +246,118 @@
         </div>
     </div>
 
+    <div class="modal modal__link" id="modal1">
+        <div class="modal__inner">
+            <div class="modal__body">
+                <i class="fas fa-window-close" id="icon__close"></i>
+                <h1>Maiami</h1>
+
+                <div class="modal__img">
+                    <img class="img" src="img/maiami.png" alt="">
+                </div>
+
+                <div class="modal__content">
+                    <div class="modal__info">
+                        <p><img src="img/house-user-solid.svg" alt=""> Rooms: 4</p>
+                        <p><img src="img/bathtub.png" alt=""> Bathrooms: 2</p>
+                        <p><img src="img/bed.png" alt=""> bedrooms: 2</p>
+                    </div>
+
+                    <div class="modal__metr">
+                        <h2>420m<sup>2</sup></h2>
+                    </div>
+
+                    <div class="modal__price">
+                        <p class="modal__text">Price: 50$/day</p>
+
+                        <p class="modal__text">Price: 1300$/mouth</p>
+                    </div>
+
+                </div>
+
+                <div class="modal__btn">
+                    <a class="btn_modal" href="">Buy now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal__link" id="modal2">
+        <div class="modal__inner">
+            <div class="modal__body">
+                <i class="fas fa-window-close" id="icon__close"></i>
+                <h1>Sietl</h1>
+
+                <div class="modal__img">
+                    <img class="img" src="img/sietl.png" alt="">
+                </div>
+
+                <div class="modal__content">
+                    <div class="modal__info">
+                        <p><img src="img/house-user-solid.svg" alt=""> Rooms: 2</p>
+                        <p><img src="img/bathtub.png" alt=""> Bathrooms: 2</p>
+                        <p><img src="img/bed.png" alt=""> bedrooms: 1</p>
+                    </div>
+
+                    <div class="modal__metr">
+                        <h2>380m<sup>2</sup></h2>
+                    </div>
+
+                    <div class="modal__price">
+                        <p class="modal__text">Price: 35$/day</p>
+
+                        <p class="modal__text">Price: 900$/mouth</p>
+                    </div>
+
+                </div>
+
+                <div class="modal__btn">
+                    <a class="btn_modal" href="">Buy now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal__link" id="modal3">
+        <div class="modal__inner">
+            <div class="modal__body">
+                <i class="fas fa-window-close" id="icon__close"></i>
+                <h1>Orlando</h1>
+
+                <div class="modal__img">
+                    <img class="img" src="img/orlando.png" alt="">
+                </div>
+
+                <div class="modal__content">
+                    <div class="modal__info">
+                        <p><img src="img/house-user-solid.svg" alt=""> Rooms: 12</p>
+                        <p><img src="img/bathtub.png" alt=""> Bathrooms: 4</p>
+                        <p><img src="img/bed.png" alt=""> bedrooms: 3</p>
+                    </div>
+
+                    <div class="modal__metr">
+                        <h2>450m<sup>2</sup></h2>
+                    </div>
+
+                    <div class="modal__price">
+                        <p class="modal__text">Price: 1000$/day</p>
+
+                        <p class="modal__text">Price: 2800$/mouth</p>
+                    </div>
+
+                </div>
+
+                <div class="modal__btn">
+                    <a class="btn_modal" href="">Buy now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>
