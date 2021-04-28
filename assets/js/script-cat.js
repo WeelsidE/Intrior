@@ -114,3 +114,131 @@ document.addEventListener('keydown', function (e) {
         modalClose(modalActive);
     }
 });
+
+
+
+
+
+//Бургер меню ===============================================================================
+const iconMenu = document.querySelector('.menu__icon');
+const menuBody = document.querySelector('.menu__body');
+const menu = document.querySelector('.menu');
+
+if (iconMenu) {
+    iconMenu.addEventListener('click', function (e) {
+        document.body.classList.toggle('no-scroll');
+    
+        menuBody.classList.toggle('_active');
+        iconMenu.classList.toggle('_active');
+
+        if (menuBody.classList.contains('_active') == true) {
+            menu.classList.add('_burger');
+        } else {
+            menu.classList.remove('_burger');
+        }
+
+
+        if (header.classList.contains('_dark') == true) {
+            header.classList.remove('_dark');
+        }
+
+        let scroll = document.window = pageYOffset;
+
+        if (menuBody.classList.contains('_active') == false && scroll >= introScroll) {
+            header.classList.add('_dark');
+        } else {
+            header.classList.remove('_dark');
+        }
+
+        
+        if (menuLinks.length > 0) {
+            for (let i = 0;menuLinks.length > i; i++) {
+                let menuLink = menuLinks[i];
+
+                menuLink.addEventListener('click', function () {
+                    if (menuLink.click) {
+                        document.body.classList.remove('no-scroll');
+
+                        menuBody.classList.remove('_active');
+                        iconMenu.classList.remove('_active');
+                    }
+                });
+                
+            }
+        }
+    });
+}
+
+
+//ШАПКА ===============================================================================
+
+// Создаем переменную со всеми элементами
+let header = document.querySelector('.header');
+
+//Дейсвия 
+let introScroll = document.querySelector('._first').offsetTop - 55;
+let scrollPrev = 0;
+
+
+window.addEventListener('scroll', function () {
+    let scroll = document.window = pageYOffset;
+
+// если scroll больше introScroll, то шапка затемняется
+    if (scroll >= introScroll) {
+        header.classList.add('_dark');
+    } else {
+        header.classList.remove('_dark');
+    }
+
+// Если scroll больше предыдущего scroll и больше introScroll , то шапка убирается
+    if (scroll >= introScroll && scroll > scrollPrev) {
+        header.classList.add('_out');
+    } else {
+        header.classList.remove('_out');
+    }
+
+//Для того, чтобы скролл сохранялся
+    scrollPrev = scroll;
+});
+
+
+
+
+
+//ПРОЕКТЫ ===============================================================================
+const projectBtns = document.querySelectorAll('.btn_project');
+const projectItems = document.querySelectorAll('.intro__item');
+const projectFirst = document.querySelector('.project__item');
+
+
+projectBtns[0].addEventListener('mouseover', function () {
+    projectItems[0].classList.add('_active');
+
+    this.addEventListener('mouseout', function () {
+        projectItems[0].classList.remove('_active');
+    });
+});
+
+projectBtns[1].addEventListener('mouseover', function () {
+    projectItems[1].classList.add('_active');
+
+    this.addEventListener('mouseout', function () {
+        projectItems[1].classList.remove('_active');
+    });
+});
+
+projectBtns[2].addEventListener('mouseover', function () {
+    projectItems[2].classList.add('_active');
+
+    this.addEventListener('mouseout', function () {
+        projectItems[2].classList.remove('_active');
+    });
+});
+
+projectBtns[3].addEventListener('mouseover', function () {
+    projectItems[3].classList.add('_active');
+
+    this.addEventListener('mouseout', function () {
+        projectItems[3].classList.remove('_active');
+    });
+});

@@ -39,7 +39,7 @@ if (menuLinks.length > 0) {
 
 
 //Дейсвия 
-let introScroll = document.querySelector('#web').offsetTop - 50;
+let introScroll = document.querySelector('#web').offsetTop - 55;
 let scrollPrev = 0;
 
 
@@ -86,7 +86,7 @@ window.addEventListener('scroll', function () {
 //Модальные окна ===============================================================================
 const modalLinks = document.querySelectorAll('.modal__link'); // Выбераем все ссылки, которые будут открывать модальные окна
 const body = document.querySelector('body'); // Нужно для блокировки скролла
-/* const lockPadding = document.querySelectorAll('.lock-padding'); */
+const lockPadding = document.querySelectorAll('.lock-padding');
 
 let unlock = true; // Не было двойных нажатий
 
@@ -161,14 +161,27 @@ function modalOpen (curentModal) {
 
 // Функция блокировки скролла
 function bodyLock () {
-    body.classList.add('no-scroll');
-
-// Нужно, чтобы не было повторных нажатий
-    unlock = false;
-    setTimeout(function () {
-        unlock = true;
-    }, timeout);
-}
+    // Высчитываем разнгицу между страницей и страницей со скроллом
+    // Так мы получаем ширину скролла 
+        const lockPaddingValue = window.innerWidth - document.querySelector('body').offsetWidth + 'px';
+    
+        if (lockPadding.length > 0) {
+            for (let i = 0; i < lockPadding.length; i++) {
+                const el = lockPadding[i];
+    
+                el.style.paddingRight = lockPaddingValue;
+            }
+        }
+    
+        body.style.paddingRight = lockPaddingValue;
+        body.classList.add('no-scroll');
+    
+    // Нужно, чтобы не было повторных нажатий
+        unlock = false;
+        setTimeout(function () {
+            unlock = true;
+        }, timeout);
+    }
 
 
 
@@ -181,13 +194,21 @@ function modalClose (modalActive, doUnlock = true) {
             bodyUnlock();
         }
     }
-};
+}
 
 
 function bodyUnlock () {
     setTimeout(function () {
+        if (lockPadding.length > 0) {
+            for (let i = 0; i < lockPadding.length; i++) {
+                const el = lockPadding[i];
+                el.style.paddingRight = '0px';
+            }
+        }
+
+        body.style.paddingRight = '0px';
         body.classList.remove('no-scroll');
-    });
+    }, timeout);
 }
 
 // Закрытие модального окна при нажатии клавиши ESC
@@ -196,4 +217,112 @@ document.addEventListener('keydown', function (e) {
         const modalActive = document.querySelector('.modal._active');
         modalClose(modalActive);
     }
+});
+
+
+
+
+
+
+
+
+
+
+
+//Бургер меню ===============================================================================
+const iconMenu = document.querySelector('.menu__icon');
+const menuBody = document.querySelector('.menu__body');
+const menu = document.querySelector('.menu');
+
+if (iconMenu) {
+    iconMenu.addEventListener('click', function (e) {
+        document.body.classList.toggle('no-scroll');
+    
+        menuBody.classList.toggle('_active');
+        iconMenu.classList.toggle('_active');
+
+        if (menuBody.classList.contains('_active') == true) {
+            menu.classList.add('_burger');
+        } else {
+            menu.classList.remove('_burger');
+        }
+
+
+        if (header.classList.contains('_dark') == true) {
+            header.classList.remove('_dark');
+        }
+
+        let scroll = document.window = pageYOffset;
+
+        if (menuBody.classList.contains('_active') == false && scroll >= introScroll) {
+            header.classList.add('_dark');
+        } else {
+            header.classList.remove('_dark');
+        }
+
+        
+        if (menuLinks.length > 0) {
+            for (let i = 0;menuLinks.length > i; i++) {
+                let menuLink = menuLinks[i];
+
+                menuLink.addEventListener('click', function () {
+                    if (menuLink.click) {
+                        document.body.classList.remove('no-scroll');
+
+                        menuBody.classList.remove('_active');
+                        iconMenu.classList.remove('_active');
+                    }
+                });
+                
+            }
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+//ПРОЕКТЫ ===============================================================================
+const projectBtns = document.querySelectorAll('.btn_project');
+const projectItems = document.querySelectorAll('.project__line_item');
+const projectFirst = document.querySelector('.project__item');
+
+
+projectBtns[0].addEventListener('mouseover', function () {
+    projectFirst.classList.add('_active');
+
+    this.addEventListener('mouseout', function () {
+        projectFirst.classList.remove('_active');
+    });
+});
+
+projectBtns[1].addEventListener('mouseover', function () {
+    projectItems[0].classList.add('_active');
+
+    this.addEventListener('mouseout', function () {
+        projectItems[0].classList.remove('_active');
+    });
+});
+
+projectBtns[2].addEventListener('mouseover', function () {
+    projectItems[1].classList.add('_active');
+
+    this.addEventListener('mouseout', function () {
+        projectItems[1].classList.remove('_active');
+    });
+});
+
+projectBtns[3].addEventListener('mouseover', function () {
+    projectItems[2].classList.add('_active');
+
+    this.addEventListener('mouseout', function () {
+        projectItems[2].classList.remove('_active');
+    });
 });
