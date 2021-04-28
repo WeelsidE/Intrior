@@ -7,8 +7,6 @@ body {
     font-size: 16px;
     color: #fff;
 
-    overflow-x: hidden;
-
     background: #000;
 }
 
@@ -45,6 +43,8 @@ a {
 
 .page {
     margin: 0 auto;
+
+    overflow: hidden;
 }
 
 ._container {
@@ -164,13 +164,18 @@ a {
     line-height: 0;
 }
 
-.menu {}
+.menu {
+    display: flex;
+}
 
 .menu__icon {
     width: 30px;
     height: 18px;
 
     position: relative;
+
+    visibility: hidden;
+    opacity: 0;
 }
 
 .menu__icon span,
@@ -1058,10 +1063,11 @@ a {
 
 @media (max-width: 550px) {
     .menu__icon {
-        display: block;
-
         position: relative;
         z-index: 2;
+
+        visibility: visible;
+        opacity: 1;
     }
 
     .menu__icon._active span,
@@ -1254,7 +1260,7 @@ a {
 }
 
 .modal__metr h2{
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 700;
     font-family: 'Montserrat Alternates', sans-serif;
     color: #D8AD47;
@@ -1268,7 +1274,7 @@ a {
 }
 
 .modal__price {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     font-family: 'Montserrat Alternates', sans-serif;
 }

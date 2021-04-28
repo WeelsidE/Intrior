@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;900&family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/aos.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/bc11df43a9.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="img/fav/favicon.ico">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav//favicon-16x16.png">
+    <link rel="manifest" href="img/fav//site.webmanifest">
+    <link rel="mask-icon" href="img/fav//safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
     <title>Interior</title>
 </head>
 <body>
@@ -35,10 +43,12 @@
     <!-- INTRO -->
     <div class="intro">
         <div class="intro__content _container">
-            <h1 id="web">Would you like to live in<br>beautiful and quiet place?</h1>
-            <p>You can choose house of your dream in our catalog.<br>We are building houses more than 15 years.</p>
+            <div class="" data-aos="fade-right" id="web">
+                <h1>Would you like to live in<br>beautiful and quiet place?</h1>
+                <p>You can choose house of your dream in our catalog.<br>We are building houses more than 15 years.</p>
 
-            <a class="btn" id="btn" href="Catalog.html">Choose a house</a>
+                <a class="btn" id="btn" href="Catalog.html">Choose a house</a>
+            </div>
         </div>
     </div>
 
@@ -46,7 +56,7 @@
     <div class="about section1">
         <div class="about__container _container">
             <div class="about__inner">
-                <div class="about__text">
+                <div class="about__text" data-aos="fade-up-right">
                     <h1>About us</h1>
 
                     <p>The reason clients of The Building Company remain our friends and satisfied customers, even after we complete their homes, is not because we try harder or work longer.</p>
@@ -60,13 +70,13 @@
                     <hr>
                 </div>
 
-                <div class="about__text_inner">
+                <div class="about__text_inner" data-aos="fade-up-right">
                     <img src="img/m-ob-removebg-preview.png" alt="">
 
                     <p>Foil gives a reflective effect and contributes to additional heat preservation in the room. Each type of insulation material has its own properties, which give some advantages to each in relation to others.</p>
                 </div>
             </div>
-            <div class="about__img">
+            <div class="about__img" data-aos="fade-left">
                 <img class="img" src="img/Сгруппировать 1.png" alt="">
             </div>
         </div>
@@ -78,7 +88,7 @@
         <div class="project__inner _container">
             <div class="project__info">
                 <div class="project__content">
-                    <div class="project__text">
+                    <div class="project__text" data-aos="fade-right">
                         <h1>Projects</h1>
 
                         <p>The reason clients of The Building Company remain our friends and satisfied customers, even after we complete their homes, is not because we try harder or work longer.</p>
@@ -88,10 +98,12 @@
                         <p>Company remain our friends and satisfied customers, even after we complete their homes, is not because we try harder or work longer</p>
                     </div>
 
-                    <a class="btn" href="Houses.xd" download="">Download catalog</a>
+                    <div class="" data-aos="fade-right">
+                        <a class="btn" href="Houses.xd" download="">Download catalog</a>
+                    </div>
                 </div>
 
-                <div class="project__item">
+                <div class="project__item" data-aos="fade-left">
                     <div class="project__item_text">
                         <div class="project__item_content">
                             <h1>Boston</h1>
@@ -110,7 +122,7 @@
 
             <div class="project__line">
                 <!-- ITEM-1 -->
-                <div class="project__line_item _first">
+                <div class="project__line_item _first" data-aos="fade-up">
                     <div class="project__line_content">
                         <div class="project__line_text">
                             <h1>Maiami</h1>
@@ -127,7 +139,7 @@
                 </div>
 
                 <!-- ITEM-2 -->
-                <div class="project__line_item _second">
+                <div class="project__line_item _second" data-aos="fade-up">
                     <div class="project__line_content">
                         <div class="project__line_text">
                             <h1>Sietl</h1>
@@ -144,7 +156,7 @@
                 </div>
                 
                 <!-- ITEM-3 -->
-                <div class="project__line_item _third">
+                <div class="project__line_item _third" data-aos="fade-up">
                     <div class="project__line_content">
                         <div class="project__line_text">
                             <h1>Orlando</h1>
@@ -165,7 +177,7 @@
 
     <div class="contact section3">
         <div class="contact__content _container">
-            <div class="contact__info">
+            <div class="contact__info" data-aos="fade-right">
                 <h3>Contacts</h3>
 
                 <p>We are waiting for you at our office in Roga.</p>
@@ -184,7 +196,7 @@
 
             </div>
 
-            <div class="contact__forms">
+            <div class="contact__forms" data-aos="fade-left">
                 <form action="" class="contact__form">
                     <h5>Write your phone number<br> and our manager will call you</h5>
 
@@ -358,6 +370,7 @@
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="assets/js/aos.js"></script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>
